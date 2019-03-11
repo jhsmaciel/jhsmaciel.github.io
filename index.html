@@ -2,60 +2,179 @@
   <head>
     <title>Calculadora</title>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
-    <style>
-      .caixa {
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style type="text/css">
+      .card {
+        box-shadow: 1px 1px 1px rgb(197, 193, 193);
+      }
+      .display-4 {
         margin-top: 40px;
-        border: solid 1px #000;
-        padding: 20px;
-        background-color: #2E2E2E;
-        border-radius: 10px;
-        box-shadow: 1px 1px 5px #000;
+        margin-bottom:0px;
       }
-      .clear {
-        width: 200px;
+      .card-subtitle {
+        margin-bottom: 10px;
       }
+      /******************************************/
+        /*Extra small devices (portrait phones, menor que 576px)*/
+        @media (max-width:575px) {
+          .card {
+            margin-top: 40px;
+          }
+          .ultimato-card {
+            margin-bottom:40px;
+          }
+        }
+
+        /*Small devices (landscape phones, 576px e maiores)*/
+        @media (min-width: 576px) and (max-width: 767.98px) { 
+          .card {
+            margin-top: 50px;
+          }
+          .ultimato-card {
+            margin-bottom:50px;
+          } 
+        }
+
+        /*Medium devices (tablets, 768px e maiores)*/
+        @media (min-width: 768px) and (max-width: 991.98px) {
+          .card {
+            margin-top: 60px;
+          }
+          .ultimato-card {
+            margin-bottom:60px;
+          } 
+        }
+
+        /*Large devices (desktops, 992px e maiores)*/
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+          .card {
+            margin-top: 60px;
+          }
+          .ultimato-row {
+            margin-bottom:60px;
+          } 
+        }
+
+        /*Extra large devices (large desktops, 1200px  e maiores)*/
+        @media (min-width: 1200px) {
+          .card {
+            margin-top: 60px;
+          }
+          .ultimato-row {
+            margin-bottom:60px;
+          }
+        }
     </style>
   </head>
 
-  <body style="background: #D9D9D9">
+  <body>
+      <nav class="navbar navbar-expand-md navbar-dark text-white bg-dark">
+          <!-- LOGO -->
+          <a href="" class="navbar-brand">João Henrique</a>
+    
+          <!-- Menu Hamburguer -->
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-target"> 
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <!-- Itens de navegação -->
+          <div class="collapse navbar-collapse" id="nav-target">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Sobre</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Perfil</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Projetos</a></li>
+              </ul>
+          </div>  
+      </nav>
 
-      <div class="container">
-          <div class="col d-flex justify-content-center">
-            <div class="caixa">
-              <div class="row">
-                <a href="jhsmaciel.github.io/ProjetoCalculadora/" class="btn btn-outline-light btn-lg clear font-weight-light">Projeto 1</a>
-                <a href="" class="btn btn-outline-light btn-lg clear font-weight-light">Projeto 2</a>
+      <section class="container">
+        <div class="caixa">
+          <div class="row d-flex">
+            <div class="col-md-5">
+            </div>
+            <div class="col-md-7 align-self-center">
+              <div class="">
+                <h1 class="display-4 ">Projetos</h1>
               </div>
-
-              <div class="row">
-                <a href="" class="btn btn-outline-light btn-lg clear font-weight-light">Projeto 3</a>
-                <a href="" class="btn btn-outline-light btn-lg clear font-weight-light">Projeto 4</a>
-             </div>
-
-              <div class="row">
-                <a href="" class="btn btn-outline-light btn-lg clear font-weight-light">Projeto 5</a>
-                <a href="" class="btn btn-outline-light btn-lg clear font-weight-light">Projeto 6</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Calculadora</h4>
+                  <h6 class="card-subtitle mb-2 text-info">HTML, CSS, Javascript e Bootstrap</h6>
+                  <p class="card-text">Projeto de desafio do curso "Desenvolvimento Web Completo" no módulo de Javascript</p>
+                  <a class="btn btn-outline-primary" href="/ProjetosJavascript/Calculadora/">Ver Projeto!</a>
+                </div>
               </div>
-
-              <div class="row">
-                <a href="" class="btn btn-outline-light btn-lg clear font-weight-light">Projeto 7</a>
-                <a href="" class="btn btn-outline-light btn-lg clear font-weight-light">Projeto 8</a>
+            </div>
+            <div class="col-lg-4">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Finans</h4>
+                  <h6 class="card-subtitle text-info">HTML, CSS e Bootstrap</h6>
+                  <p class="card-text">Projeto fictício,   feito apenas para fixação de conteúdos do bootstrap, módulo de bootstrap </p>
+                  <a href="/ProjetosBootstrap/Finans/" class="btn btn-outline-info">Ver o Projeto!</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Spotify</h4>
+                  <h6 class="card-subtitle text-info">HTML, CSS e Bootstrap</h6>
+                  <p class="card-text">Projeto cópia do spotify, feito apenas para fixação de conteúdos do bootstrap, módulo de bootstrap  </p>
+                  <a href="/ProjetosBootstrap/Spotify/" class="btn btn-outline-dark">Ver o Projeto!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">TecBlog</h4>
+                    <h6 class="card-subtitle text-info">HTML e CSS</h6>
+                    <p class="card-text">Projeto de um blog fictício, feito apenas com HTML e CSS para fixação de conteúdos </p>
+                    <a href="/ProjetosCSS/TecBlog/" class="btn btn-outline-success">Ver o Projeto!</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">SiteCidade</h4>
+                    <h6 class="card-subtitle text-info">HTML e CSS</h6>
+                    <p class="card-text">Projeto de uma cidade fictícia, feito apenas com HTML e CSS para fixação de conteúdos </p>
+                    <a href="/ProjetosCSS/SiteCidade/" class="btn btn-outline-danger">Ver o Projeto!</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Anna Bella</h4>
+                    <h6 class="card-subtitle text-info">HTML e CSS</h6>
+                    <p class="card-text">Projeto fictício de um blog pessoal, apenas feito com HTML e CSS para fixação de conteúdos  </p>
+                    <a href="/ProjetosCSS/AnaBella/" class="btn btn-outline-warning">Ver o Projeto!</a>
+                  </div>
+                </div>
               </div>
           </div>
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Projeto Calculadora</h5>
-          <p class="card-text">Projeto feito no </p>
-          <a href="jhsmaciel.github.io/ProjetoCalculadora/" class="btn btn-outline-warning">Ver o Projeto!</a>
-        </div>
-      </div>
-    
-  </body> 
+          <div class="row ultimato-row">
 
+          </div>
+        </div>
+      </section>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+      <script src="js/bootstrap.min.js"></script>
+  </body> 
 </html>

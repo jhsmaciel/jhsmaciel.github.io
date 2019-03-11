@@ -3,8 +3,8 @@
   <head>
     <title>Calculadora</title>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
 
     <style>
       .calculadora {
@@ -54,7 +54,7 @@
             <div class="row">
               <button onclick="calcular('acao','c')" type="button" class="btn btn-dark btn-lg clear font-weight-light">C</button>
               <button onclick="calcular('acao','/')" type="button" class="btn btn-dark btn-lg font-weight-light">/</button>
-              <button onclick="calcular('acao','*')" type="button" class="btn btn-dark btn-lg font-weight-light">x</button>
+              <button onclick="calcular('acao','*')" type="button" class="btn btn-dark btn-lg font-weight-light">*</button>
             </div>
 
             <div class="row">
@@ -103,10 +103,8 @@
           if (valor === '='){
             document.getElementById('resultado').value = eval(document.getElementById('resultado').value)
           }
-
         }
       }
     </script>
   </body> 
-
 </html>
