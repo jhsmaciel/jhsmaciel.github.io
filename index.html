@@ -1,9 +1,9 @@
 <html>
-	<head>
-		<title>Calculadora</title>
+  <head>
+    <title>Calculadora</title>
 
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
     <style>
       .calculadora {
@@ -21,7 +21,7 @@
         box-shadow: 1px 1px 1px #000;
       }
       .clear {
-        width: 130px;
+        width: 200px;
       }
       .enter {
         height: 110px;
@@ -38,48 +38,31 @@
         box-shadow: 1px 1px 1px #000;
       }
     </style>
-	</head>
+  </head>
 
   <body style="background: #D9D9D9">
 
     <div class="container">
-      <div class="row">
         <div class="col d-flex justify-content-center">
-          <br />
-
           <div class="calculadora">
-            <input id="resultado" type="text" class="form-control resultado" placeholder="0" disabled="disabled" />
-            
+        
             <div class="row">
-              <button onclick="calcular('acao','c')" type="button" class="btn btn-dark btn-lg clear font-weight-light">C</button>
-              <button onclick="calcular('acao','/')" type="button" class="btn btn-dark btn-lg font-weight-light">/</button>
-              <button onclick="calcular('acao','*')" type="button" class="btn btn-dark btn-lg font-weight-light">x</button>
+              <a href="jhsmaciel.github.io/Projeto Calculadora/" class="btn btn-outline-light btn-lg clear font-weight-light">Projeto</a>
+              <a href="" class="btn btn-dark btn-lg clear font-weight-light">Projeto 2</a>
             </div>
 
             <div class="row">
-              <button onclick="calcular('valor','7')" type="button" class="btn btn-dark btn-lg font-weight-light">7</button>
-              <button onclick="calcular('valor','8')" type="button" class="btn btn-dark btn-lg font-weight-light">8</button>
-              <button onclick="calcular('valor','9')" type="button" class="btn btn-dark btn-lg font-weight-light">9</button>
-              <button onclick="calcular('acao','-')" type="button" class="btn btn-dark btn-lg font-weight-light">-</button>
-            </div>
-            
-            <div class="row">
-              <button onclick="calcular('valor','4')" type="button" class="btn btn-dark btn-lg font-weight-light">4</button>
-              <button onclick="calcular('valor','5')" type="button" class="btn btn-dark btn-lg font-weight-light">5</button>
-              <button onclick="calcular('valor','6')" type="button" class="btn btn-dark btn-lg font-weight-light">6</button>
-              <button onclick="calcular('acao','+')" type="button" class="btn btn-dark btn-lg font-weight-light">+</button>
+              <a href="" class="btn btn-dark btn-lg clear font-weight-light">Projeto 3</a>
+              <a href="" class="btn btn-dark btn-lg clear font-weight-light">Projeto 4</a>
             </div>
 
             <div class="row">
-              <button onclick="calcular('valor','1')" type="button" class="btn btn-dark btn-lg font-weight-light">1</button>
-              <button onclick="calcular('valor','2')" type="button" class="btn btn-dark btn-lg font-weight-light">2</button>
-              <button onclick="calcular('valor','3')" type="button" class="btn btn-dark btn-lg font-weight-light">3</button>
-              <button onclick="calcular('acao','=')" type="button" class="btn btn-dark btn-lg enter">=</button>
+              <a href="" class="btn btn-dark btn-lg clear font-weight-light">Projeto 5</a>
+              <a href="" class="btn btn-dark btn-lg clear font-weight-light">Projeto 5</a>
             </div>
 
-            <div class="row" style="margin-top: -60px">
-              <button onclick="calcular('valor','0')" type="button" class="btn btn-dark zero btn-lg font-weight-light">0</button>
-              <button onclick="calcular('acao','.')" type="button" class="btn btn-dark btn-lg font-weight-light">.</button>
+            <div class="row">
+              <a href="" class="btn btn-dark btn-lg clear font-weight-light">P4</a>
             </div>
 
           </div>
@@ -87,25 +70,6 @@
       </div>
     </div>   
     
-    <script>
-      function calcular(tipo,valor) {
-        console.log(tipo,valor)
-        if ( tipo === 'valor') {
-          document.getElementById('resultado').value += valor
-        } else if (tipo === 'acao'){
-          if ( valor === 'c'){
-            document.getElementById('resultado').value = ''
-          }
-          if ( valor === '*' || valor === '+' || valor ==='-' || valor ==='/' || valor ==='.'){
-            document.getElementById('resultado').value += valor
-          }
-          if (valor === '='){
-            document.getElementById('resultado').value = eval(document.getElementById('resultado').value)
-          }
-
-        }
-      }
-    </script>
-  </body>	
+  </body> 
 
 </html>
