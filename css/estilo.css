@@ -27,6 +27,7 @@ footer {
     }
     .display-3 {
         font-size: 1.5em;
+        margin-top: 15px;
     }
 }
 /*Small devices (landscape phones, 576px e maiores)*/
@@ -39,6 +40,7 @@ footer {
     } 
     .display-3 {
         font-size: 1.5em;
+        margin-top: 15px;
     }
 }
 /*Medium devices (tablets, 768px e maiores)*/
@@ -51,6 +53,7 @@ footer {
     } 
     .display-3 {
         font-size: 1.5em;
+        margin-top: 15px;
     }
 }
 /*Large devices (desktops, 992px e maiores)*/
