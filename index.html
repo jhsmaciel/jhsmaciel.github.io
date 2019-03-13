@@ -10,9 +10,55 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style type="text/css">
-      .display-4 {
-        margin-top: 40px;
-        margin-bottom:0px;
+      /******************************************/
+      /*Extra small devices (portrait phones, menor que 576px)*/
+      @media (max-width:575px) {
+          .display-4 {
+            font-size: 2em
+          }
+          .display-3 {
+            font-size: 3em
+          }
+      }
+
+      /*Small devices (landscape phones, 576px e maiores)*/
+      @media (min-width: 576px) and (max-width: 767.98px) { 
+        .display-4 {
+          font-size: 2.5em
+        }
+        .display-3 {
+          font-size: 3.5em
+        }
+      }
+
+      /*Medium devices (tablets, 768px e maiores)*/
+      @media (min-width: 768px) and (max-width: 991.98px) {
+        .display-4 {
+          font-size: 3em
+        }
+        .display-3 {
+          font-size: 3.5em
+        }
+      }
+
+      /*Large devices (desktops, 992px e maiores)*/
+      @media (min-width: 992px) and (max-width: 1199.98px) {
+        .display-4 {
+          font-size: 3.5em
+        }
+        .display-3 {
+          font-size: 4em
+        }
+      }
+
+      /*Extra large devices (large desktops, 1200px  e maiores)*/
+      @media (min-width: 1200px) {
+        .display-4 {
+          font-size: 4em
+        }
+        .display-3 {
+          font-size: 5em
+        }
       }
     </style>
   </head>
@@ -43,7 +89,8 @@
         <div class="caixa">
             <div class="d-flex justify-content-center">
                 <div class="">
-                    <h1 class="display-4 ">Projeto em construção, aba de projetos e perfil já tem alguma coisa, mas estão em construção</h1>
+                    <h1 class="display-3">Projeto em construção</h1>
+                    <p class="display-4">Abas de projetos e perfil já tem algumas coisas, mas estão em construção</p>
                 </div>
             </div>
         </div>
