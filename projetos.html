@@ -12,6 +12,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilo.css">
+    <!--Card em js-->
+    <script src="js/gerarCards.js"></script>
+
   </head>
   <body>
       <nav class="navbar navbar-expand-sm navbar-dark text-white bg-dark">
@@ -35,108 +38,19 @@
           </div> 
         </div>   
       </nav>
-      <div class="d-flex justify-content-center display-2 m-5">
+      <div class="d-flex justify-content-center display-2 m-2">
         <h1 class="display-4 ">Projetos</h1>
       </div>
-      <section class="container">
-        <div class="caixa">
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Game Mata Mosquito</h4>
-                  <h6 class="card-subtitle mb-2 text-info">HTML, CSS, Javascript e Bootstrap</h6>
-                  <p class="card-text">Projeto de um game de matar mosquitos feito em especial com JavaScript no módulo de Javascript</p>
-                  <a class="btn btn-outline-primary" href="/projetos/Javascript/Game Mata Mosquito/">Ver Projeto!</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Calculadora</h4>
-                  <h6 class="card-subtitle mb-2 text-info">HTML, CSS, Javascript e Bootstrap</h6>
-                  <p class="card-text">Projeto de desafio do curso "Desenvolvimento Web Completo" no módulo de Javascript</p>
-                  <a class="btn btn-outline-primary" href="/projetos/Javascript/Calculadora/">Ver Projeto!</a>
-                </div>
-              </div>
-             </div>
-             <div class="col-lg-4">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Finans</h4>
-                    <h6 class="card-subtitle text-info">HTML, CSS e Bootstrap</h6>
-                    <p class="card-text">Projeto fictício,   feito apenas para fixação de conteúdos do bootstrap, módulo de bootstrap </p>
-                    <a href="/projetos/Bootstrap/Finans/" class="btn btn-outline-info">Ver o Projeto!</a>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Spotify</h4>
-                  <h6 class="card-subtitle text-info">HTML, CSS e Bootstrap</h6>
-                  <p class="card-text">Projeto cópia do spotify, feito apenas para fixação de conteúdos do bootstrap, módulo de bootstrap  </p>
-                  <a href="/projetos/Bootstrap/Spotify/" class="btn btn-outline-dark">Ver o Projeto!</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Museu Nacional</h4>
-                  <h6 class="card-subtitle text-info">HTML e CSS</h6>
-                  <p class="card-text">Projeto de um site de um Museu fictíticio, feito apenas com HTML e CSS para fixação de conteúdos </p>
-                  <a href="/projetos/CSS/MuseuNacional/" class="btn btn-outline-success">Ver o Projeto!</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">TecBlog</h4>
-                  <h6 class="card-subtitle text-info">HTML e CSS</h6>
-                  <p class="card-text">Projeto de um blog fictício, feito apenas com HTML e CSS para fixação de conteúdos </p>
-                  <a href="/projetos/CSS/TecBlog/" class="btn btn-outline-success">Ver o Projeto!</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="goToPart" class="row ultimato-row">
-            <div class="col-lg-4">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">SiteCidade</h4>
-                    <h6 class="card-subtitle text-info">HTML e CSS</h6>
-                    <p class="card-text">Projeto de uma cidade fictícia, feito apenas com HTML e CSS para fixação de conteúdos </p>
-                    <a href="/projetos/CSS/SiteCidade/" class="btn btn-outline-danger">Ver o Projeto!</a>
-                  </div>
-                </div>
-              </div>
-            <div class="col-lg-4">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Anna Bella</h4>
-                  <h6 class="card-subtitle text-info">HTML e CSS</h6>
-                  <p class="card-text">Projeto fictício de um blog pessoal, apenas feito com HTML e CSS para fixação de conteúdos  </p>
-                  <a href="/projetos/CSS/AnaBella/" class="btn btn-outline-warning">Ver o Projeto!</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 ultimato-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Universidade Unes</h4>
-                  <h6 class="card-subtitle text-info">HTML</h6>
-                  <p class="card-text">Projeto de uma universidade fictícia, feito apenas com HTML para fixação de conteúdos  </p>
-                  <a href="/projetos/HTML/UniversidadeUnes/" class="btn btn-outline-warning">Ver o Projeto!</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section id="sec" class="container ultimato-card ultimato-row">
+        <script>makeCard('Game Mata Mosquito','HTML, CSS, Javascript e Bootstrap','Projeto de um game de matar mosquitos feito em especial com JavaScript no módulo de Javascript','projetos/Javascript/Game Mata Mosquito')</script>
+        <script>makeCard('Calculadora','HTML, CSS, Javascript e Bootstrap','Projeto de um game de matar mosquitos feito em especial com JavaScript no módulo de Javascript','projetos/Javascript/Calculadora')</script>
+        <script>makeCard('Finans','HTML, CSS e Bootstrap','Projeto fictício, feito apenas para fixação de conteúdos do bootstrap, módulo de bootstrap','projetos/Bootstrap/Finans')</script>
+        <script>makeCard('Spotify','HTML, CSS e Bootstrap','Projeto cópia do spotify, feito apenas para fixação de conteúdos do bootstrap, módulo de bootstrap','projetos/Bootstrap/Spotify')</script>
+        <script>makeCard('Museu Nacional','HTML e CSS','Projeto de um site de um Museu fictíticio, feito apenas com HTML e CSS para fixação de conteúdos','projetos/CSS/MuseuNacional')</script>
+        <script>makeCard('TecBlog','HTML e CSS','Projeto de um blog fictício, feito apenas com HTML e CSS para fixação de conteúdos','projetos/CSS/TecBlog')</script>
+        <script>makeCard('Site Cidade','HTML e CSS','Projeto de uma cidade fictícia, feito apenas com HTML e CSS para fixação de conteúdos','projetos/CSS/SiteCidade')</script>
+        <script>makeCard('Anna Bella','HTML e CSS','Projeto fictício de um blog pessoal, apenas feito com HTML e CSS para fixação de conteúdos','projetos/CSS/AnaBella')</script>
+        <script>makeCard('Universidade Unes','HTML','Projeto de uma universidade fictícia, feito apenas com HTML para fixação de conteúdos','projetos/HTML/UniversidadeUnes')</script>
       </section>
       <footer class="bg-dark">
           <div class="container">
