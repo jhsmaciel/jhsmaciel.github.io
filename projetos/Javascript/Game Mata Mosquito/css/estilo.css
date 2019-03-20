@@ -4,6 +4,7 @@ html {
 body {
     background: url('../image/bg.jpg') no-repeat;
     overflow: hidden;
+    background-size: cover;
 }
 .mosquito1 {
     width: 50px;
