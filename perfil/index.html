@@ -14,6 +14,8 @@
         <link rel="icon" href="../img/favicon.png">
         <!-- CSS Externo -->
         <link rel="stylesheet" href="css/estilo.css">
+        <!-- Script gerarCard -->
+        <script src="js/gerarCard.js"></script>   
     </head>
     <body>
         <nav class="navbar navbar-expand-sm navbar-dark text-white bg-dark">
@@ -113,9 +115,8 @@
                                 <div class="idioma">
                                     <ul>
                                         <li>CNH AB</li>
-                                        <li>Info 2</li>
-                                        <li>Info 3</li>
-                                        <li>Info 4</li>
+                                        <li>Trabalho voluntário no evento FATEC LOG edição 2017 - Carga Horária de 8 horas</li>
+                                        <li></li>
                                     </ul>
                                 </div>
                             </div>
@@ -125,28 +126,21 @@
         </section>
         <section id="conhecimentos">
             <div class="container">
-                <div class="row p-3">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Java</h4>
-                                <h6 class="card-subtitle mb-3 mt-2 text-info">Java SE, Java EE</h6>
-                                <p class="card-text">Projetos academicos, feitos com Java e outras tecnologias, a maioria dos projetos persiste no meu <a href="https://github.com/jhsmaciel" target="_blank" class="link-todo">GitHub</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                    
-                    </div>
-                    <div class="col-md-4">
-                    
-                    </div>
+                <h4 align="center" class="mt-5 mb-3 title-upper">Conhecimentos</h4>
+                <div class="p-3" id="div">
+                    <script>makeCard("Java","Java SE, Java EE, JSP, Tomcat e Servlet","Projetos acadêmicos, utilizando desde recursos básicos até recursos como J a maioria dos projetos persiste no meu <a href='https://github.com/jhsmaciel' class='link-todo'>GitHub</a>.")</script>
+                    <script>makeCard("Banco de Dados","PostgreSQL, Oracle SQL, MySQL, SQL Server","Desde a modelagem do banco de dados até a manipulação do proprío via aplicação.")</script>
+                    <script>makeCard("HTML/CSS","HTML, CSS, SASS e Bootstrap","Desde a estruturação das tags até a estilização via código css, tenho projetos relacionados a essas tecnologias na aba <a href='../projetos.html' class='link-todo'>Projetos</a>")</script>
+                    <script>makeCard("Padrão de Arquitetura","MVC","MVC, Model, View e Controller, principal padrão de arquitetura que eu me desenvolvi")</script>
+                    <script>makeCard("Javascript","Noções de React, Angular, NodeJS","Javascript, estou estudando ECMAScript 6, mas tenho projetos sobre essas tecnologias na aba <a href='../projetos.html' class='link-todo'>Projetos</a>")</script>
+                    <script>makeCard("Versionamento de Código","GitHub","Minha principal ferramenta de uso para versionamento de código, para qualquer tipo de projeto")</script>
+                    <script>makeCard("Padrão de Arquitetura","MVC","MVC, Model, View e Controller, principal padrão de arquitetura que eu me desenvolvi")</script>
                 </div>
             </div>
         </section>
         <section id="certificados" class="d-flex">
             <div class="container align-self-center">
-                <h1 class="display-4" style="text-align:center;">Certificados <i class="far fa-lightbulb"></i></h1>
+                <h4 class="title-upper" align="center">Certificados <i class="far fa-lightbulb"></i></h4>
                 <div class="row">
                     <div class="col-md-2"></div>
                     <div class="col-md-8">

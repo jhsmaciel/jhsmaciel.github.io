@@ -28,12 +28,12 @@ footer {
 
 .link-todo {
     text-decoration: none;
-    color:#212529;
+    color:#C60F0F;
 }
 
 .link-todo:hover {
     text-decoration: underline;
-    color: #212529;
+    color: #C60F0F;
 }
 
 h4 {
@@ -106,11 +106,20 @@ h4 {
     .tamanho-image {
         width: 300px;
     }
+    .title-upper {
+        font-size: 3em
+    }
+    .title-upper {
+        font-size: 2.5em
+    }
 }
 
 /*Extra large devices (large desktops, 1200px  e maiores)*/
 @media (min-width: 1200px) {
     .tamanho-image {
         width: 360px;
+    }
+    .title-upper {
+        font-size: 3em
     }
 }
