@@ -46,6 +46,9 @@ body {
     font-weight: bold;
     color:white;
 }
+.img-sizee {
+    height: 350px;
+}
 /******************************************/
 /*Extra small devices (portrait phones, menor que 576px)*/
 @media (max-width:575px) {
@@ -54,24 +57,33 @@ body {
 
 /*Small devices (landscape phones, 576px e maiores)*/
 @media (min-width: 576px) and (max-width: 767.98px) { 
-
+    .img-sizee {
+        height: 375px;
+    }
 }
 
 /*Medium devices (tablets, 768px e maiores)*/
 @media (min-width: 768px) and (max-width: 991.98px) {
-
+    .img-sizee {
+        height: 400px;
+    }
 }
 /*Large devices (desktops, 992px e maiores)*/
 @media (min-width: 992px) and (max-width: 1199.98px) {
     body {
         background-size: cover;
     }
-    
+    .img-sizee {
+        height: 450px;
+    }
 }
 
 /*Extra large devices (large desktops, 1200px  e maiores)*/
 @media (min-width: 1200px) {
     body {
         background-size: cover;
+    }
+    .img-sizee {
+        height: 450px;
     }
 }
