@@ -9,6 +9,36 @@ footer {
     font-size: 2em
 }
 
+.arredonda {
+    border-radius: 179.5px;
+    box-shadow: 1px 1px 1px 1px rgb(197, 193, 193);
+}
+
+.card {
+    box-shadow: 1px 1px 1px rgb(197, 193, 193);
+}
+
+.card-custom {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    box-shadow: 1px 1px 1px rgb(197, 193, 193);
+}
+
+.link-localizacao {
+    text-decoration: none;
+    color:#212529;
+}
+
+.link-localizacao:hover {
+    text-decoration: none;
+    color: #6F7275;
+}
+
+h4 {
+    padding-top: 10px;
+    font-size: 1.5em 
+}
+
 /******************************************/
 /*Extra small devices (portrait phones, menor que 576px)*/
 @media (max-width:575px) {
@@ -19,8 +49,11 @@ footer {
     .display-3 {
         font-size: 1.5em;
         margin-top:15px
+    }   
+    .tamanho-image {
+        width: 120px;
     }
-    
+
 }
 
     /*Small devices (landscape phones, 576px e maiores)*/
@@ -31,6 +64,9 @@ footer {
         .display-3 {
             font-size: 1.5em;
             margin-top:15px
+        }
+        .tamanho-image {
+            width: 180px;
         }
 }
 
@@ -43,14 +79,21 @@ footer {
             font-size: 1.5em;
             margin-top:15px
         }
+        .tamanho-image {
+            width: 240px;
+        }
 }
 
-    /*Large devices (desktops, 992px e maiores)*/
-    @media (min-width: 992px) and (max-width: 1199.98px) {
-    
+/*Large devices (desktops, 992px e maiores)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .tamanho-image {
+        width: 300px;
+    }
 }
 
-    /*Extra large devices (large desktops, 1200px  e maiores)*/
-    @media (min-width: 1200px) {
-    
+/*Extra large devices (large desktops, 1200px  e maiores)*/
+@media (min-width: 1200px) {
+    .tamanho-image {
+        width: 360px;
+    }
 }
