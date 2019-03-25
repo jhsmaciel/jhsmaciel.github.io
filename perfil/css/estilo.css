@@ -2,9 +2,11 @@ footer {
     padding: 50px 0px 20px 0px;
     position: relative;
 }
+
 .display-4 {
     font-size: 2.5em;
 }
+
 .display-3 {
     font-size: 2em
 }
@@ -24,20 +26,30 @@ footer {
     box-shadow: 1px 1px 1px rgb(197, 193, 193);
 }
 
-.link-localizacao {
+.link-todo {
     text-decoration: none;
     color:#212529;
 }
 
-.link-localizacao:hover {
-    text-decoration: none;
-    color: #6F7275;
+.link-todo:hover {
+    text-decoration: underline;
+    color: #212529;
 }
 
 h4 {
     padding-top: 10px;
-    font-size: 1.5em 
+    font-size: 2em;
 }
+
+#contato div i {
+    margin-right: 10px;
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-left: 8px;
+    font-size: 17px;
+}
+
+
 
 /******************************************/
 /*Extra small devices (portrait phones, menor que 576px)*/
@@ -53,35 +65,40 @@ h4 {
     .tamanho-image {
         width: 120px;
     }
-
+    h4 {
+        font-size: 1.5em;
+    }
 }
 
-    /*Small devices (landscape phones, 576px e maiores)*/
-    @media (min-width: 576px) and (max-width: 767.98px) { 
-        .display-4 {
-            font-size: 2em;
-        }
-        .display-3 {
-            font-size: 1.5em;
-            margin-top:15px
-        }
-        .tamanho-image {
-            width: 180px;
-        }
+/*Small devices (landscape phones, 576px e maiores)*/
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .display-4 {
+        font-size: 2em;
+    }
+    .display-3 {
+        font-size: 1.5em;
+        margin-top:15px
+    }
+    .tamanho-image {
+        width: 180px;
+    }
+    h4 {
+        font-size: 1.5em;
+    }
 }
 
-    /*Medium devices (tablets, 768px e maiores)*/
-    @media (min-width: 768px) and (max-width: 991.98px) {
-        .display-4 {
-            font-size: 2.5em;
-        }
-        .display-3 {
-            font-size: 1.5em;
-            margin-top:15px
-        }
-        .tamanho-image {
-            width: 240px;
-        }
+/*Medium devices (tablets, 768px e maiores)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .display-4 {
+        font-size: 2.5em;
+    }
+    .display-3 {
+        font-size: 1.5em;
+        margin-top:15px
+    }
+    .tamanho-image {
+        width: 240px;
+    }
 }
 
 /*Large devices (desktops, 992px e maiores)*/
