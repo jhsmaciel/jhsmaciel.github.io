@@ -7,6 +7,7 @@ footer {
 }
 .card {
     box-shadow: 1px 1px 1px rgb(197, 193, 193);
+    transition: 1s all;
 }
 .display-4 {
     margin-top: 40px;
@@ -15,6 +16,11 @@ footer {
 .card-subtitle {
     margin-bottom: 10px;
 }
+
+.shadow-strong {
+    box-shadow: 3px 3px 3px rgb(197, 193, 193);
+}
+
 
 /******************************************/
 /*Extra small devices (portrait phones, menor que 576px)*/

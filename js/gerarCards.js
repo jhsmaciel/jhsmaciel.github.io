@@ -1,5 +1,9 @@
 var i = 0
 var j = 1
+var k = 50
+
+
+
 function makeCard(title, tecnologias,texto, caminho) {
     let row = document.createElement('div')
         row.className = 'row'
@@ -12,6 +16,9 @@ function makeCard(title, tecnologias,texto, caminho) {
         col.appendChild(card)
     let cardbody = document.createElement('div')
         cardbody.className = 'card-body'
+        cardbody.id = k
+        cardbody.onmouseover = shadowOn
+        cardbody.onmouseout = shadowOff
         card.appendChild(cardbody)
     let h4 = document.createElement('h4')
         h4.className = 'card-title'
@@ -23,7 +30,6 @@ function makeCard(title, tecnologias,texto, caminho) {
         p.className = 'card-text'
         p.innerHTML = texto
     let a = document.createElement('a')
-        a.className = 
         a.className = 'btn btn-outline-'+corAleatoria()
         a.href = caminho
         a.innerHTML = 'Ver Projeto!'
@@ -39,6 +45,7 @@ function makeCard(title, tecnologias,texto, caminho) {
         document.getElementById(j).appendChild(col)
     }
     i++
+    k++
 }
 
 function corAleatoria(){
@@ -58,4 +65,16 @@ function corAleatoria(){
         case 5:
             return 'secondary'
     }
+}
+
+let shadowOn = function () {
+    let elemento = document.getElementById(this.id)
+    elemento.className = "shadow-strong "+ elemento.className
+    console.log()
+}
+
+let shadowOff = function () {
+    let elemento = document.getElementById(this.id)
+    elemento.className = "card-body"
+    console.log()
 }
