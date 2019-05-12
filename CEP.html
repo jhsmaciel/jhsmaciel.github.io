@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Verificar CEP</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="main.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <h1 align="center">Verificar CEP</h1>
+            
+        <div class="container">
+                <div class="form-inline">
+                    <div class="form-group mb-2">
+                        <label for="cep">CEP</label>
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="text" class="form-control" id="cep" placeholder="Ex: 08122060">
+                    </div>
+                    <button onclick="pesquisaCep()" class="btn btn-dark">Buscar</button>
+                </div>     
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="rua">Rua</label>
+                    <input type="text" class="form-control" id="rua">
+                </div>
+                <div class="col-md-6">
+                    <label>Bairro</label>
+                    <input class="form-control" type="text" id="bairro">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Cidade</label>
+                    <input class="form-control" type="text" id="cidade">
+                </div>
+                <div class="col-md-6">
+                    <label>UF</label>
+                    <input class="form-control" type="text" id="uf">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
