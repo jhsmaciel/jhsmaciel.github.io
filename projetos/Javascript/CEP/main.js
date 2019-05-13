@@ -41,6 +41,6 @@ function pesquisaCep() {
     } else {
         // Else para cep inválido, caso não entre no if
         limpaForm()
-        alert("CEP inválido");
+        alert("CEP inválidosssssss");
     }
 }
