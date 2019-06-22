@@ -2,8 +2,6 @@ var i = 0
 var j = 1
 var k = 50
 
-
-
 function makeCard(title, tecnologias,texto, caminho) {
     let row = document.createElement('div')
         row.className = 'row'
