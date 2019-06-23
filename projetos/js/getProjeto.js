@@ -27,5 +27,9 @@ function gotData(data) {
 }
 
 function errData(data) {
+    document.getElementById('loading').innerHTML(`<div class="alert alert-danger" role="alert">
+    Não foi possível obter os dados, verifique sua conexão!
+  </div>`);
+    console.log('entrou');
     console.log(data);
 }

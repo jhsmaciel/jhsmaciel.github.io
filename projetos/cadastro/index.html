@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <title>Cadastro de projetos</title>
+        <!-- Meta tags Obrigatórias -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--Theme color-->
+        <meta name="theme-color" content="#292b2c">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#292b2c">
+        <meta name="msapplication-TileColor" content="#004f4f">
+        <meta name="msapplication-square70x70logo" content="https://jhsmaciel.github.io/img/logoPreto.png">
+        <meta name="msapplication-square150x150logo" content="https://jhsmaciel.github.io/img/logoPreto.png">
+        <meta name="msapplication-wide310x150logo" content="https://jhsmaciel.github.io/img/logoPreto.png">
+
+        <link rel="icon" href="../../img/favicon.png">
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+            integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="../../css/estilo.css">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-sm navbar-dark text-white bg-dark">
+            <div class="container">
+                <!-- LOGO -->
+                <a href="../../" class="navbar-brand"><img src="../../img/logo.png" width="55" class="text-white"></a>
+
+                <!-- Menu Hamburguer -->
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-target">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Itens de navegação -->
+                <div class="collapse navbar-collapse" id="nav-target">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a href="../../" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="../../perfil" class="nav-link">Perfil</a></li>
+                        <li class="nav-item"><a href="../" class="nav-link">Projetos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="d-flex justify-content-center display-2 m-2">
+                <h1 class="display-4 ">Cadastro</h1>
+            </div>
+            <form id="formulario">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="titulo">Título</label>
+                        <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Digite o título do projeto"
+                            required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="tecnologias">Tecnologias</label>
+                        <input type="text" class="form-control" id="tecnologias" name="tecnologias"
+                            placeholder="Digite as tecnologias utilizadas" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputDate">Texto a ser inserido</label>
+                        <input type="text" name="texto" class="form-control" placeholder="Texto do projeto"
+                            id="texto" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputCpf">Path do projeto</label>
+                        <input type="text" class="form-control" name="pathproject" id="pathproject" placeholder="Ex: /vue/nomeprojeto/"
+                            required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-0"></div>
+                    <input type="submit" class="btn btn-outline-dark" value="Cadastrar">
+                </div>
+            </form>
+        </div>
+        <br>
+        <footer class="bg-dark">
+            <div class="container" onmouseover="">
+                <div class="row">
+                    <div class="col-md-2">
+                        <a href="../../"><img src="../../img/logo.png" width="80"></a>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="display-3 text-white">Links úteis</h4>
+                        <ul class="navbar-nav pl-3">
+                            <li><a href="" class="text-white">Queue</a></li>
+                            <li><a href="" class="text-white">List</a></li>
+                            <li><a href="" class="text-white">Documentation</a></li>
+                            <li><a href="" class="text-white">Newslater</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="display-3 text-white">Redes Sociais</h4>
+                        <p>
+                            <div class="">
+                                <a href="https://www.linkedin.com/in/jo%C3%A3o-henrique-3a8132125/" target="_blank"
+                                    class="btn btn-outline-light">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://github.com/jhsmaciel" target="_blank" class="btn btn-outline-light ml-2">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="" class="btn btn-outline-light ml-2">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="" class="btn btn-outline-light ml-2">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+        </script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-app.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+        <script src="../js/projetoModel.js"></script>
+        <script src="../js/cadastrarProjeto.js"></script>
+    </body>
+</html>
