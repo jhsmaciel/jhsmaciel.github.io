@@ -11,13 +11,14 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 var ref = firebase.database().ref()
-
+document.getElementById('sec').value = '';
 ref.on('value',gotData, errData)
 
 
 function gotData(data) {
     var projetos = data.val()
     var keys = Object.keys(projetos)
+    document.getElementById('loading').innerHTML = ''
     for (let it = 0; it < keys.length; it++) {
         var key = keys[it];
         var projeto = projetos[key];
@@ -26,5 +27,5 @@ function gotData(data) {
 }
 
 function errData(data) {
-    console.log(err);
+    console.log(data);
 }
