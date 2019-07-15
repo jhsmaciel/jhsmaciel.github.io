@@ -104,8 +104,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <h4 align="center">Objetivo <i class="fas fa-bullseye"></i></h4>
-                                <p>
-                                    Estágio em Desenvolvimento de Software(independente da linguagem), ou em Suporte, até mesmo Desenvolvedor Junior.
+                                <p class="pl-4">
+                                    Vaga para Analista e Desenvolvedor de Software.                                     
                                 </p>
                             </div>
                             <div class="col-md-6">
@@ -141,6 +141,16 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 align="center">Experiências <i class="fas fa-briefcase"></i></h4>
+                                <div class="idioma">
+                                    <ul>
+                                        <li>Português (Nativo)</li>
+                                        <li>Inglês - Intermediário</li>
+                                    </ul>
+                                </div>
+                            </div>
                     </div>
                 </div>
         </section>
@@ -153,12 +163,13 @@
                         makeCard("Banco de Dados","PostgreSQL, Oracle SQL, MySQL, SQL Server","Desde a modelagem do banco de dados até a manipulação do proprío via aplicação.")
                         makeCard("HTML/CSS","HTML, CSS, SASS e Bootstrap","Desde a estruturação das tags até a estilização via código css, tenho projetos relacionados a essas tecnologias na aba <a href='../projetos' class='link-todo'>Projetos</a>")
                         makeCard("Javascript","Noções de React, Angular, NodeJS","Javascript, estou estudando ECMAScript 6, mas tenho projetos sobre essas tecnologias na aba <a href='../projetos' class='link-todo'>Projetos</a>")
-                        makeCard("Versionamento de Código","GitHub","Minha principal ferramenta de uso para versionamento de código, para qualquer tipo de projeto")
+                        makeCard("Versionamento de Código","Git","Principal ferramenta de uso para versionamento de código, para qualquer tipo de projeto")
                         makeCard("Padrão de Arquitetura","MVC","MVC: Model, View e Controller, principal padrão de arquitetura que eu me desenvolvi")
                     </script>
                 </div>
             </div>
         </section>
+        
         <section id="certificados" class="d-flex">
             <div class="container align-self-center">
                 <h4 class="title-upper" align="center">Certificados <i class="far fa-lightbulb"></i></h4>
@@ -167,16 +178,17 @@
                     <div class="col-md-8">
                     <div id="carousel-certificate" class="carousel slide" data-ride="carousel">
                         <!-- Inner item-->
-                        <div class="carousel-inner px-5">
-                            <div class="carousel-item active">
+                        <div id="carousel-top" class="carousel-inner px-5">
+
+                            <!-- <div class="carousel-item active">
                                 <a href="https://www.ev.org.br"><img class="img-fluid widthZ" src="img/CertJava.png"></a>
                             </div>
                             <div class="carousel-item">
-                                <a href="https://www.ev.org.br"><img src="img/CertJavaAS.png" class="img-fluid widthZ"></a>
+                                <a href="https://www.ev.org.br"><img class="img-fluid widthZ" src="img/CertJavaAS.png"></a>
                             </div>
                             <div class="carousel-item">
                                 <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-UAR7PLNL.jpg?l=en_US"><img src="img/CertificateUdemy.jpg" class="img-fluid widthZ"></a>
-                            </div>
+                            </div> -->
                         </div>
                         <!-- Controles -->
                         <a href="#carousel-certificate" class="carousel-control-prev" data-slide="prev">
@@ -230,6 +242,23 @@
                     </div>
                 </div>
         </footer>
+        <script>
+            let arr = []
+            arr.push({
+                link: "https://www.ev.org.br",
+                src: "img/CertJava.png"
+            })
+            arr.push({
+                link: "https://www.ev.org.br",
+                src: "img/CertJavaAS.png"
+            })
+            arr.push({
+                link: "https://udemy-certificate.s3.amazonaws.com/image/UC-UAR7PLNL.jpg?l=en_US",
+                src: "img/CertificateUdemy.jpg"
+            })
+            arr.forEach(el => makeCarousel(el.link, el.src));
+            
+        </script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -237,5 +266,6 @@
             integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
             crossorigin="anonymous"></script>
         <script src="../js/bootstrap.min.js"></script>
+        
     </body>
 </html>
