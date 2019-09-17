@@ -71,8 +71,8 @@
                         </div>
                         <div class="col-sm-7">
                             <h4>João Henrique da Silva Maciel</h4>
-                            <p>
-                                Brasileiro, solteiro e 19 anos
+                            <p id="idade-top">
+                                
                             </p>
                             <div>
                                 <span>Endereço:</span>
@@ -272,6 +272,12 @@
             })
             arr.forEach(el => makeCarousel(el.link, el.src));
             
+        </script>
+        <script>
+            var today = new Date();
+            var happy = new Date([06,21,1999])
+            var topizera = '20'
+            document.querySelector("#idade-top").innerHTML = `Brasileiro, solteiro e ${topizera} anos`
         </script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
