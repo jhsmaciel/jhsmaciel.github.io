@@ -1,10 +1,13 @@
 import React from 'react';
-import ProjetosAntigos from './antigos'
+import Projects from '../../components/projects'
 
-function Projetos() {
+function ProjectsPage() {
   return (
-    <ProjetosAntigos />
+    <React.Fragment>
+      <Projects title='Projetos novos' resourceName='/projetos-novos' />
+      <Projects title='Projetos antigos' resourceName='/projetos-antigos' />
+    </React.Fragment>
   );
 }
 
-export default Projetos;
+export default ProjectsPage;

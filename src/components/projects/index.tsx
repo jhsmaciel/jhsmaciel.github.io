@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { onValue, ref, getDatabase } from "firebase/database";
-import { Projeto } from '../../../interfaces';
-import { CardProjeto } from '../../../components/card';
+import { Projeto } from '../../interfaces';
+import { CardProjeto } from '../card';
 import Grid from '@mui/material/Grid';
 
 import Box from '@mui/material/Box';
@@ -18,7 +18,13 @@ const Transition = React.forwardRef(function Transition(
 ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
-const ProjetosAntigos: React.FC = () => {
+
+interface ProjetosProps {
+  title: string
+  resourceName: string
+}
+
+const Projects: React.FC<ProjetosProps> = ({ title, resourceName }) => {
 
   const [projetos, setProjetos] = useState<Projeto[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -31,7 +37,8 @@ const ProjetosAntigos: React.FC = () => {
     onValue(
       ref(getDatabase()),
       (snapshot) => {
-        const projetos = snapshot.val();
+        const projetos = snapshot.child(resourceName).val();
+        console.log(projetos)
         let listaProjetos: Projeto[] = []
         for (const key in projetos) {
           if (Object.prototype.hasOwnProperty.call(projetos, key)) {
@@ -46,49 +53,17 @@ const ProjetosAntigos: React.FC = () => {
         setLoading(false);
       }
     );
-  }, [enqueueSnackbar]);
+  }, [enqueueSnackbar, resourceName]);
 
   return (
     <React.Fragment>
       <Typography 
         variant="h4"
         component="div"
-        style={{ marginTop: 16, marginBottom:16, textTransform: "none", color: "transparent"  }}
+        style={{ marginTop: 16, marginBottom:16, textTransform: "none", color: "transparent" }}
         className="arco-iris"
       >
-          Projetos novos
-      </Typography>
-      <Box>
-        <Grid container spacing={2}>
-          {
-            Array
-              .from(new Array(4))
-              .map((it: Projeto | undefined, index) => 
-                <CardProjeto
-                  projeto={it}
-                  key={index}
-                  onClick={async () => {
-                    try {
-                      const response = await fetch(`${process.env.PUBLIC_URL}/old_projects/projetos/${it!!.path}/`)
-                      setInnerHtmlProject(await response.text())
-                      setVisibleProject(true)
-                    } catch (e) {
-                      let err = e as Error;
-                      enqueueSnackbar(err.message, { variant: 'error' });
-                    }
-                  }}
-                />
-              )
-          }
-        </Grid>
-      </Box>
-      <Typography 
-        variant="h4"
-        component="div"
-        style={{ marginTop: 16, marginBottom:16, textTransform: "none", color: "transparent"  }}
-        className="arco-iris"
-      >
-          Projetos antigos
+        { title }
       </Typography>
       <Box>
         <Grid container spacing={2}>
@@ -123,4 +98,4 @@ const ProjetosAntigos: React.FC = () => {
   );
 }
 
-export default ProjetosAntigos;
+export default Projects;

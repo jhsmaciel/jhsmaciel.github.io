@@ -128,9 +128,12 @@ const ResponsiveAppBar = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-                <Button style={{
-                  textTransform: "none"
-                }}>
+                <Button
+                  key={page.path}
+                  style={{
+                    textTransform: "none"
+                  }}
+                >
                   <NavLink
                       style={({ isActive }) => {
                           let style: React.CSSProperties = {
