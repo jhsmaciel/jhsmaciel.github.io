@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { onValue, ref, getDatabase } from "firebase/database";
-import { Projeto } from '../../interfaces';
-import { CardProjeto } from '../card';
+import { Projeto } from 'interfaces';
+import { CardProjeto } from 'components/card';
 import Grid from '@mui/material/Grid';
 
 import Box from '@mui/material/Box';

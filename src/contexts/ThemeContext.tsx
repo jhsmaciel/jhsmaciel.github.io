@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider as ThemeProviderMaterial, createTheme } from '@mui/material/styles';
 import { PaletteMode } from '@mui/material';
-import { STORAGE_ITEM_NAME_THEME } from '../constants/storage';
+import { STORAGE_ITEM_NAME_THEME } from 'constants/storage';
 
 interface ThemeDataContext {
     changeTheme(mode: PaletteMode): void

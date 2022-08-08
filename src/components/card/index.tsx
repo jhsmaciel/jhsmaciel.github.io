@@ -6,7 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Skeleton from '@mui/material/Skeleton';
-import { Projeto } from '../../interfaces';
+import { Projeto } from 'interfaces';
 import Grid from '@mui/material/Grid';
 
 interface CardProjetoProps {

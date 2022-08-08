@@ -16,7 +16,7 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import SettingsIcon from '@mui/icons-material/SettingsOutlined';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import CloseIcon from '@mui/icons-material/Close';
-import { useTheme } from '../../contexts/ThemeContext';
+import { useTheme } from 'contexts/ThemeContext';
   
 const pages = [{ path: 'projetos', nome: 'Projetos' },{ path: 'perfil', nome: 'Perfil'}];
 

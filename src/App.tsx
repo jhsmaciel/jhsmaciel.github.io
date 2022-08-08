@@ -1,9 +1,9 @@
 import React  from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Perfil from './pages/perfil';
-import Projects from './pages/projetos';
-import SearchAppBar from './components/appbar';
-import { ThemeProvider } from './contexts/ThemeContext';
+import Perfil from 'pages/perfil';
+import Projects from 'pages/projetos';
+import SearchAppBar from 'components/appbar';
+import { ThemeProvider } from 'contexts/ThemeContext';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import { SnackbarProvider } from 'notistack';
