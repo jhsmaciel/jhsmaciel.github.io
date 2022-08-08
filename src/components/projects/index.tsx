@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { onValue, ref, getDatabase } from "firebase/database";
-import { Projeto } from 'interfaces';
+import { Project } from 'interfaces';
 import { CardProjeto } from 'components/card';
 import Grid from '@mui/material/Grid';
 
@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import { useSnackbar } from 'notistack';
 import { Dialog, Slide, Typography } from '@mui/material';
 import { TransitionProps } from '@mui/material/transitions';
+import { useNavigate } from 'react-router-dom';
 
 
 const Transition = React.forwardRef(function Transition(
@@ -26,23 +27,22 @@ interface ProjetosProps {
 
 const Projects: React.FC<ProjetosProps> = ({ title, resourceName }) => {
 
-  const [projetos, setProjetos] = useState<Projeto[]>([]);
+  const [projetos, setProjetos] = useState<Project[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const { enqueueSnackbar } = useSnackbar();
   const [innerHtmlProject, setInnerHtmlProject] = useState<string | null>(null);
   const [visibleProject, setVisibleProject] = useState<boolean>(false);
-
+  const navigate = useNavigate();
   useEffect(() => {
     setLoading(true);
     onValue(
       ref(getDatabase()),
       (snapshot) => {
         const projetos = snapshot.child(resourceName).val();
-        console.log(projetos)
-        let listaProjetos: Projeto[] = []
+        let listaProjetos: Project[] = []
         for (const key in projetos) {
           if (Object.prototype.hasOwnProperty.call(projetos, key)) {
-            listaProjetos.push(projetos[key] as Projeto);
+            listaProjetos.push(projetos[key] as Project);
           }
         }
         setProjetos(listaProjetos);
@@ -67,15 +67,21 @@ const Projects: React.FC<ProjetosProps> = ({ title, resourceName }) => {
       </Typography>
       <Box>
         <Grid container spacing={2}>
-          {(loading ? Array.from(new Array(8)) : projetos).map((it: Projeto | undefined, index) => (
+          {(loading ? Array.from(new Array(8)) : projetos).map((it: Project | undefined, index) => (
             <CardProjeto
               projeto={it}
               key={index}
               onClick={async () => {
                 try {
-                  const response = await fetch(`${process.env.PUBLIC_URL}/old_projects/projetos/${it!!.path}/`)
-                  setInnerHtmlProject(await response.text())
-                  setVisibleProject(true)
+                  
+                  if ("old" === it?.type) {
+                    navigate(`${process.env.PUBLIC_URL}/old_projects/projetos/${it!!.path}/`)
+                    return;
+                    // await fetch(`${process.env.PUBLIC_URL}/old_projects/projetos/${it!!.path}/`)
+                    // setInnerHtmlProject(await response.text())
+                    // setVisibleProject(true)
+                  }
+                  navigate(it!!.path)
                 } catch (e) {
                   let err = e as Error;
                   enqueueSnackbar(err.message, { variant: 'error' });
