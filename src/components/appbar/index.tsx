@@ -124,7 +124,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            <img src="img/logoPreto.png" alt="Logo" width="55" />
+            <img src={`img/logo${mode === 'light' ? "Preto" : ''}.png`} alt="Logo" width="55" />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (

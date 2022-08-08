@@ -14,7 +14,6 @@ interface CardProjetoProps {
     onClick: () => void | Promise<void>  
 }
 
-
 export const CardProjeto: React.FC<CardProjetoProps> = ({ projeto, onClick }) => {
 
     const colWidth = { xs: 12, sm: 6, md: 4, lg: 3 };

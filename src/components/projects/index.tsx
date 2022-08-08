@@ -60,7 +60,7 @@ const Projects: React.FC<ProjetosProps> = ({ title, resourceName }) => {
       <Typography 
         variant="h4"
         component="div"
-        style={{ marginTop: 16, marginBottom:16, textTransform: "none", color: "transparent" }}
+        style={{ paddingTop: 16, paddingBottom:16, textTransform: "none", color: "transparent" }}
         className="arco-iris"
       >
         { title }
