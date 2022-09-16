@@ -6,19 +6,7 @@ import Grid from '@mui/material/Grid';
 
 import Box from '@mui/material/Box';
 import { useSnackbar } from 'notistack';
-import { Dialog, Slide, Typography } from '@mui/material';
-import { TransitionProps } from '@mui/material/transitions';
-import { useNavigate } from 'react-router-dom';
-
-
-const Transition = React.forwardRef(function Transition(
-  props: TransitionProps & {
-    children: React.ReactElement;
-  },
-  ref: React.Ref<unknown>,
-) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
+import { Typography } from '@mui/material';
 
 interface ProjetosProps {
   title: string
@@ -30,8 +18,15 @@ const Projects: React.FC<ProjetosProps> = ({ title, resourceName }) => {
   const [projetos, setProjetos] = useState<Project[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const { enqueueSnackbar } = useSnackbar();
-  const [visibleProject, setVisibleProject] = useState<boolean>(false);
-  const navigate = useNavigate();
+
+  function getPathProject (project?: Project): string {
+    let path =process.env.PUBLIC_URL
+    if ("old" === project?.type) {
+        path += "/old_projects/projetos";
+    }
+    path += project!!.path
+    return path
+  }
 
   useEffect(() => {
     setLoading(true);
@@ -73,12 +68,8 @@ const Projects: React.FC<ProjetosProps> = ({ title, resourceName }) => {
               key={index}
               onClick={async () => {
                 try {
-                  (console.log(it))
-                  if ("old" === it?.type) {
-                    window.open(`${process.env.PUBLIC_URL}/old_projects/projetos/${it!!.path}/`, "_self")
-                    return;
-                  }
-                  window.open(process.env.PUBLIC_URL + it!!.path, "_self")
+                  const link = getPathProject(it);
+                  window.open(link)
                 } catch (e) {
                   let err = e as Error;
                   enqueueSnackbar(err.message, { variant: 'error' });
@@ -88,14 +79,6 @@ const Projects: React.FC<ProjetosProps> = ({ title, resourceName }) => {
           ))}
         </Grid>
       </Box>
-      <Dialog
-        fullScreen
-        open={visibleProject}
-        onClose={() => setVisibleProject(false)}
-        TransitionComponent={Transition}
-      >
-        {/* {innerHtmlProject && <div dangerouslySetInnerHTML={{ __html: innerHtmlProject,  }} />} */}
-      </Dialog>
     </React.Fragment>
 
   );
