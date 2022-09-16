@@ -20,7 +20,7 @@ const Projects: React.FC<ProjetosProps> = ({ title, resourceName }) => {
   const { enqueueSnackbar } = useSnackbar();
 
   function getPathProject (project?: Project): string {
-    let path =process.env.PUBLIC_URL
+    let path = process.env.PUBLIC_URL
     if ("old" === project?.type) {
         path += "/old_projects/projetos/";
     }
@@ -69,7 +69,7 @@ const Projects: React.FC<ProjetosProps> = ({ title, resourceName }) => {
               onClick={async () => {
                 try {
                   const link = getPathProject(it);
-                  window.open(link)
+                  window.open(link, "_blank")
                 } catch (e) {
                   let err = e as Error;
                   enqueueSnackbar(err.message, { variant: 'error' });
