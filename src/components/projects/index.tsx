@@ -30,9 +30,9 @@ const Projects: React.FC<ProjetosProps> = ({ title, resourceName }) => {
   const [projetos, setProjetos] = useState<Project[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const { enqueueSnackbar } = useSnackbar();
-  const [innerHtmlProject, setInnerHtmlProject] = useState<string | null>(null);
   const [visibleProject, setVisibleProject] = useState<boolean>(false);
   const navigate = useNavigate();
+
   useEffect(() => {
     setLoading(true);
     onValue(
@@ -73,15 +73,12 @@ const Projects: React.FC<ProjetosProps> = ({ title, resourceName }) => {
               key={index}
               onClick={async () => {
                 try {
-                  
+                  (console.log(it))
                   if ("old" === it?.type) {
-                    navigate(`${process.env.PUBLIC_URL}/old_projects/projetos/${it!!.path}/`)
+                    window.open(`${process.env.PUBLIC_URL}/old_projects/projetos/${it!!.path}/`, "_self")
                     return;
-                    // await fetch(`${process.env.PUBLIC_URL}/old_projects/projetos/${it!!.path}/`)
-                    // setInnerHtmlProject(await response.text())
-                    // setVisibleProject(true)
                   }
-                  navigate(it!!.path)
+                  window.open(process.env.PUBLIC_URL + it!!.path, "_self")
                 } catch (e) {
                   let err = e as Error;
                   enqueueSnackbar(err.message, { variant: 'error' });
@@ -97,7 +94,7 @@ const Projects: React.FC<ProjetosProps> = ({ title, resourceName }) => {
         onClose={() => setVisibleProject(false)}
         TransitionComponent={Transition}
       >
-        {innerHtmlProject && <div dangerouslySetInnerHTML={{ __html: innerHtmlProject,  }} />}
+        {/* {innerHtmlProject && <div dangerouslySetInnerHTML={{ __html: innerHtmlProject,  }} />} */}
       </Dialog>
     </React.Fragment>
 
