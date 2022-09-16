@@ -22,7 +22,7 @@ const Projects: React.FC<ProjetosProps> = ({ title, resourceName }) => {
   function getPathProject (project?: Project): string {
     let path =process.env.PUBLIC_URL
     if ("old" === project?.type) {
-        path += "/old_projects/projetos";
+        path += "/old_projects/projetos/";
     }
     path += project!!.path
     return path
