@@ -52,7 +52,7 @@ function posicaoRandomica(){
     posicaox = posicaox < 0 ? 0 : posicaox
     posicaoy = posicaoy < 0 ? 0 : posicaoy
     var mosquito = document.createElement('img')
-    mosquito.src="old_projects/projetos/Javascript/Game Mata Mosquito/image/mosquito.png"
+    mosquito.src="image/mosquito.png"
     mosquito.className = tamanhoAleatorio()+" "+ladoAleatorio()
     mosquito.style.left = posicaox + "px"
     mosquito.style.top = posicaoy + "px"
