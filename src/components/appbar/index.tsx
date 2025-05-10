@@ -10,21 +10,25 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { Divider, Drawer, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import SettingsIcon from '@mui/icons-material/SettingsOutlined';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import CloseIcon from '@mui/icons-material/Close';
 import { useTheme } from 'contexts/ThemeContext';
-  
-const pages = [{ path: 'projetos', nome: 'Projetos' },{ path: 'perfil', nome: 'Perfil'}];
+
+const pages = [{ path: 'projetos', nome: 'Projetos' }, { path: 'perfil', nome: 'Perfil' }];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [drawerVisible, setDrawerVisible] = React.useState<boolean>(false);
 
   const { changeTheme, mode } = useTheme();
+
+  const location = useLocation();
+  const currentRoute = location.pathname;
+  const isBlackThamba = "/blackthamba" === currentRoute
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -35,14 +39,139 @@ const ResponsiveAppBar = () => {
   };
 
   const toggleDrawer = (event: React.KeyboardEvent | React.MouseEvent) => {
-    if ( event.type === 'keydown' && 
-        ((event as React.KeyboardEvent).key === 'Tab' ||
+    if (event.type === 'keydown' &&
+      ((event as React.KeyboardEvent).key === 'Tab' ||
         (event as React.KeyboardEvent).key === 'Shift')
     ) {
       return;
     }
     setDrawerVisible(it => !it);
   };
+
+  const ConteinerContent = () => {
+    return <Container maxWidth="xl">
+      <Toolbar disableGutters>
+        <Typography
+          variant="h6"
+          noWrap
+          component="div"
+          sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+        >
+          {!isBlackThamba && <Tooltip title="Logo">
+            <img src={`img/logo${mode === 'light' ? "Preto" : ''}.png`} alt="Logo" width="55" />
+          </Tooltip>}
+        </Typography>
+        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleOpenNavMenu}
+            color="inherit"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            sx={{
+              display: { xs: 'block', md: 'none' },
+            }}
+          >
+            {!isBlackThamba ? pages.map((page) => (
+              <MenuItem key={page.path} onClick={handleCloseNavMenu}>
+                <NavLink
+                  style={({ isActive }) => {
+                    let style: React.CSSProperties = {
+                      color: "transparent",
+                      textDecorationColor: "transparent",
+                    }
+                    if (!isActive) {
+                      style.background = "transparent"
+                      style.color = mode === 'light' ? "black" : 'white'
+                    }
+                    return style;
+                  }}
+                  className="arco-iris"
+                  to={page.path}
+                  key={page.path}
+                >
+                  {page.nome}
+                </NavLink>
+              </MenuItem>
+            )) : <div>Eai testinho</div>}
+          </Menu>
+        </Box>
+        <Typography
+          variant="h6"
+          noWrap
+          component="div"
+          sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+        >
+          <img src={`img/logo${mode === 'light' ? "Preto" : ''}.png`} alt="Logo" width="55" />
+        </Typography>
+        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          {!isBlackThamba ? pages.map((page) => (
+            <Button
+              key={page.path}
+              style={{
+                textTransform: "none"
+              }}
+            >
+              <NavLink
+                style={({ isActive }) => {
+                  let style: React.CSSProperties = {
+                    color: "transparent",
+                    textDecorationColor: "transparent",
+                  }
+                  if (!isActive) {
+                    style.background = "transparent"
+                    style.color = mode === 'light' ? "black" : 'white'
+                  }
+                  return style;
+                }}
+                className="arco-iris"
+                to={page.path}
+                key={page.path}
+              >
+                {page.nome}
+              </NavLink>
+            </Button>
+          )): <div>Eai testinho</div>}
+        </Box>
+        <Box sx={{ flexGrow: 0 }}>
+          <Tooltip title="Abrir configurações">
+            <IconButton
+              onClick={toggleDrawer}
+              aria-label="settings"
+              style={{
+                borderStyle: "solid",
+                borderColor: "rgb(231, 235, 240)",
+                borderWidth: "thin",
+                height: 38,
+                width: 38,
+                borderRadius: 10
+              }}
+            >
+              <SettingsIcon />
+            </IconButton>
+          </Tooltip>
+        </Box>
+      </Toolbar>
+    </Container>
+  }
 
   return (
     <AppBar
@@ -53,128 +182,7 @@ const ResponsiveAppBar = () => {
         opacity: 0.9
       }}
     >
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
-            <Tooltip title="Logo">
-              <img src={`img/logo${mode === 'light' ? "Preto" : ''}.png`} alt="Logo" width="55" />
-            </Tooltip>
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page.path} onClick={handleCloseNavMenu}>
-                    <NavLink
-                      style={({ isActive }) => {
-                        let style: React.CSSProperties = {
-                          color: "transparent",
-                          textDecorationColor: "transparent",
-                        }
-                        if (!isActive) {
-                          style.background = "transparent"
-                          style.color = mode === 'light' ? "black" : 'white'
-                        }
-                        return style;
-                      }}
-                      className="arco-iris"
-                      to={page.path}
-                      key={page.path}
-                    >
-                        {page.nome}
-                    </NavLink>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-            <img src={`img/logo${mode === 'light' ? "Preto" : ''}.png`} alt="Logo" width="55" />
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-                <Button
-                  key={page.path}
-                  style={{
-                    textTransform: "none"
-                  }}
-                >
-                  <NavLink
-                      style={({ isActive }) => {
-                          let style: React.CSSProperties = {
-                            color: "transparent",
-                            textDecorationColor: "transparent",
-                          }
-                          if (!isActive) {
-                            style.background = "transparent"
-                            style.color = mode === 'light' ? "black" : 'white'
-                          }
-                          return style;
-                      }}
-                      className="arco-iris"
-                      to={page.path}
-                      key={page.path}
-                  >
-                      {page.nome}
-                  </NavLink>
-                </Button>
-            ))}
-          </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Abrir configurações">
-              <IconButton 
-                onClick={toggleDrawer}
-                aria-label="settings" 
-                style={{
-                  borderStyle: "solid",
-                  borderColor: "rgb(231, 235, 240)",
-                  borderWidth: "thin",
-                  height: 38,
-                  width: 38,
-                  borderRadius: 10
-                }}
-              >
-                <SettingsIcon />
-              </IconButton>
-            </Tooltip>
-          </Box>
-        </Toolbar>
-      </Container>
+      <ConteinerContent />
       <Drawer
         anchor='right'
         open={drawerVisible}
@@ -203,16 +211,15 @@ const ResponsiveAppBar = () => {
             paddingRight: 16,
             paddingLeft: 16,
           }}
-          
         >
-          <Typography variant="body1" style={{ margin: "20px 0px 10px"}} component={'p'}>
+          <Typography variant="body1" style={{ margin: "20px 0px 10px" }} component={'p'}>
             Modo
           </Typography>
           <ToggleButtonGroup
             color="primary"
             value={mode}
             exclusive
-            onChange={(event, value) => changeTheme(value)}
+            onChange={(_event, value) => changeTheme(value)}
           >
             <ToggleButton value="dark">
               <Brightness4Icon />

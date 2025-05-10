@@ -6,6 +6,7 @@ import AppBar from 'components/appbar';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import { SnackbarProvider } from 'notistack';
+import BlackThambaLandingPage from 'pages/blackthamba';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           bgcolor: 'background.default',
           color: 'text.primary',
           width: '100%',
+
         }}
       >
         <Container
@@ -31,6 +33,7 @@ function App() {
             <Routes>
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/projetos" element={<Projects />} />
+              <Route path="/blackthamba" element={<BlackThambaLandingPage />} />
             </Routes>
           </SnackbarProvider>
         </Container>
