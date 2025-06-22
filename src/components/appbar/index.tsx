@@ -165,7 +165,6 @@ const ProfileAppBar = ({ anchorElNav, handleCloseNavMenu, handleOpenNavMenu, tog
 };
 
 const BlackThambaAppBar = ({ anchorElNav, handleCloseNavMenu, handleOpenNavMenu, toggleDrawer }: AppBarProps) => {
-  const { mode } = useTheme();
 
   return <Container maxWidth="xl">
     <Toolbar disableGutters>
@@ -176,7 +175,7 @@ const BlackThambaAppBar = ({ anchorElNav, handleCloseNavMenu, handleOpenNavMenu,
         sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
       >
         <Tooltip title="Logo">
-          <img src={'/blackthamba.png'} alt="Logo" width="55" style={{ borderRadius: 10 }} />
+          <img src={'/blackthamba.png'} alt="Logo" width="45" style={{ borderRadius: 10 }} />
         </Tooltip>
       </Typography>
       <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -200,7 +199,7 @@ const BlackThambaAppBar = ({ anchorElNav, handleCloseNavMenu, handleOpenNavMenu,
           keepMounted
           transformOrigin={{
             vertical: 'top',
-            horizontal: 'left',
+            horizontal: 'right',
           }}
           open={Boolean(anchorElNav)}
           onClose={handleCloseNavMenu}
@@ -213,7 +212,9 @@ const BlackThambaAppBar = ({ anchorElNav, handleCloseNavMenu, handleOpenNavMenu,
               <Button
                 key={section.key}
                 style={{
-                  textTransform: "none"
+                  textTransform: "none",
+                  color: '#EDE0C0',
+                  background: 'transparent'
                 }}
                 onClick={() => {
                   const element = document.getElementById(section.key);
@@ -245,8 +246,10 @@ const BlackThambaAppBar = ({ anchorElNav, handleCloseNavMenu, handleOpenNavMenu,
           <Button
             key={section.key}
             style={{
-              textTransform: "none"
+              textTransform: "none",
+              color: '#EDE0C0',
             }}
+            type='button'
             onClick={() => {
               const element = document.getElementById(section.key);
               if (element) {
@@ -349,6 +352,7 @@ const ResponsiveAppBar = () => {
           </IconButton>
         </Box>
         <Divider />
+        {isBlackThamba ? null :
         <Box
           width={360}
           style={{
@@ -372,7 +376,7 @@ const ResponsiveAppBar = () => {
               <Brightness7Icon />
             </ToggleButton>
           </ToggleButtonGroup>
-        </Box>
+        </Box>}
       </Drawer>
       <Divider />
     </AppBar>
