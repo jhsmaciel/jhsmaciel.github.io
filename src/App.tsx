@@ -18,7 +18,7 @@ function App() {
           bgcolor: 'background.default',
           color: 'text.primary',
           width: '100%',
-
+          minHeight: '100vh'
         }}
       >
         <Container
