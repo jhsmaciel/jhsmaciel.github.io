@@ -3,7 +3,6 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Perfil from 'pages/perfil';
 import Projects from 'pages/projetos';
 import AppBar from 'components/appbar';
-import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import { SnackbarProvider } from 'notistack';
 import BlackThambaLandingPage from 'pages/blackthamba';
@@ -13,7 +12,6 @@ function App() {
     <BrowserRouter>
       <AppBar />
       <Box
-        className='wrapper'
         sx={{
           bgcolor: 'background.default',
           color: 'text.primary',
@@ -21,22 +19,13 @@ function App() {
           minHeight: '100vh'
         }}
       >
-        <Container
-          maxWidth="xl"
-          className='wrapper'
-          sx={{
-            bgcolor: 'background.default',
-            color: 'text.primary',
-          }}
-        >
-          <SnackbarProvider maxSnack={3}>
-            <Routes>
-              <Route path="/perfil" element={<Perfil />} />
-              <Route path="/projetos" element={<Projects />} />
-              <Route path="/blackthamba" element={<BlackThambaLandingPage />} />
-            </Routes>
-          </SnackbarProvider>
-        </Container>
+        <SnackbarProvider maxSnack={3}>
+          <Routes>
+            <Route path="/perfil" element={<Perfil />} />
+            <Route path="/projetos" element={<Projects />} />
+            <Route path="/blackthamba" element={<BlackThambaLandingPage />} />
+          </Routes>
+        </SnackbarProvider>
       </Box>
     </BrowserRouter>
   );
