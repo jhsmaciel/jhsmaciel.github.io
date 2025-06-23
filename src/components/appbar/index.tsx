@@ -28,13 +28,13 @@ export interface AppBarProps {
 
 const pages = [{ key: 'projetos', name: 'Projetos' }, { key: 'perfil', name: 'Perfil' }, { key: 'blackthamba', name: 'Black Thamba' }];
 
-const blackThambaSections = [
-  { name: 'Início', key: 'inicio' },
-  { name: 'Sobre', key: 'sobre' },
-  { name: 'Estatuto', key: 'estatuto' },
-  { name: 'Eventos', key: 'eventos' },
-  { name: 'Galeria', key: 'galeria' },
-  { name: 'Contato', key: 'contato' }
+export const blackThambaSections = [
+  { name: 'Início', key: 'hero' },
+  { name: 'Sobre', key: 'about' },
+  { name: 'Estatuto', key: 'statute' },
+  { name: 'FAQ', key: 'faq' },
+  // { name: 'Eventos', key: 'events' },
+  { name: 'Contato', key: 'footer' }
 ];
 
 const ProfileAppBar = ({ anchorElNav, handleCloseNavMenu, handleOpenNavMenu, toggleDrawer }: AppBarProps) => {

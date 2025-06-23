@@ -2,12 +2,12 @@
 import { useTheme } from 'contexts/ThemeContext';
 import React, { useEffect, useState } from 'react';
 import Hero from './components/hero';
-import About from './components/about' 
-import Rules from './components/rules';
+import About from './components/about'
+import Statute from './components/statute';
 import Events from './components/events';
-import Gallery from './components/gallery';
 import Footer from './components/footer';
 import { Divider } from '@mui/material';
+import FrequentQuestions from './components/frequent-questions';
 
 function BlackThambaLandingPage() {
   const { changeTheme, mode } = useTheme();
@@ -39,9 +39,11 @@ function BlackThambaLandingPage() {
       <Hero />
       <Divider />
       <About />
-      <Rules />
+      <Divider />
+      <Statute />
+      <FrequentQuestions />
+      <Divider />
       <Events />
-      <Gallery />
       <Divider />
       <Footer />
     </React.Fragment>

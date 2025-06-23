@@ -27,7 +27,7 @@ const StyledBox = styled('div')(({ theme }) => ({
 export default function Hero() {
     return (
         <Box
-            id="inicio"
+            id="hero"
             sx={(theme) => ({
                 width: '100%',
                 backgroundRepeat: 'no-repeat',
@@ -52,6 +52,7 @@ export default function Hero() {
                         alignItems: 'center',
                         fontSize: 'clamp(3rem, 10vw, 3.5rem)',
                         color: 'primary.main',
+                        
                     }}
                 >
                     Black Thamba
