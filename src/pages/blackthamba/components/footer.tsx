@@ -5,8 +5,6 @@ import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { Instagram } from '@mui/icons-material';
 import { blackThambaSections } from 'components/appbar';
 import Stack from '@mui/material/Stack';
@@ -52,7 +50,7 @@ export default function Footer() {
             minWidth: { xs: '100%', sm: '60%' },
           }}
         >
-          <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
+          <Box sx={{ width: { xs: '80%', sm: '80%' } }}>
             <Typography variant="body2" gutterBottom sx={{ fontWeight: 600, mt: 2 }}>
             Sugestões e Feedbacks
             </Typography>
@@ -76,7 +74,6 @@ export default function Footer() {
             key={section.key}
             style={{
               textTransform: "none",
-              // color: '#EDE0C0',
               background: 'transparent',
               padding: 0,
             }}
@@ -131,18 +128,9 @@ export default function Footer() {
           <IconButton
             color="inherit"
             size="small"
-            href="https://github.com/jhsmaciel"
-            aria-label="GitHub"
-            sx={{ alignSelf: 'center' }}
-          >
-            <GitHubIcon />
-          </IconButton>
-          <IconButton
-            color="inherit"
-            size="small"
             href="https://www.instagram.com/blackthamba/"
             aria-label="instagram"
-            sx={{ alignSelf: 'center' }}
+            sx={{alignSelf: 'center'}}
           >
             <Instagram />
           </IconButton>
