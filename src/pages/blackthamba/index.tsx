@@ -1,7 +1,7 @@
 
 import { useTheme } from 'contexts/ThemeContext';
 import React, { useEffect, useState } from 'react';
-import Hero from './components/hero'; // TODO Translate it to english
+import Hero from './components/hero';
 import About from './components/about' 
 import Rules from './components/rules';
 import Events from './components/events';
