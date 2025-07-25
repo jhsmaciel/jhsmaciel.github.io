@@ -26,16 +26,8 @@ export interface AppBarProps {
   toggleDrawer: (event: React.KeyboardEvent | React.MouseEvent) => void
 }
 
-const pages = [{ key: 'projetos', name: 'Projetos' }, { key: 'perfil', name: 'Perfil' }, { key: 'blackthamba', name: 'Black Thamba' }];
+const pages = [{ key: 'projetos', name: 'Projetos' }, { key: 'perfil', name: 'Perfil' }];
 
-export const blackThambaSections = [
-  { name: 'Início', key: 'hero' },
-  { name: 'Sobre', key: 'about' },
-  { name: 'Estatuto', key: 'statute' },
-  { name: 'FAQ', key: 'faq' },
-  // { name: 'Eventos', key: 'events' },
-  { name: 'Contato', key: 'footer' }
-];
 
 const ProfileAppBar = ({ anchorElNav, handleCloseNavMenu, handleOpenNavMenu, toggleDrawer }: AppBarProps) => {
   const { mode } = useTheme();
@@ -161,239 +153,6 @@ const ProfileAppBar = ({ anchorElNav, handleCloseNavMenu, handleOpenNavMenu, tog
   </Container>
 };
 
-const BlackThambaAppBar = ({ anchorElNav, handleCloseNavMenu, handleOpenNavMenu, toggleDrawer }: AppBarProps) => {
-
-  return <Container maxWidth="xl">
-    <Toolbar disableGutters>
-      <Typography
-        variant="h6"
-        noWrap
-        component="div"
-        sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-      >
-        <Tooltip title="Logo">
-          <img src={'/blackthamba.png'} alt="Logo" width="45" style={{ borderRadius: 10 }} />
-        </Tooltip>
-      </Typography>
-      <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="menu-appbar"
-          aria-haspopup="true"
-          onClick={handleOpenNavMenu}
-          color="inherit"
-        >
-          <MenuIcon />
-        </IconButton>
-        <Menu
-          id="menu-appbar"
-          anchorEl={anchorElNav}
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'left',
-          }}
-          keepMounted
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          open={Boolean(anchorElNav)}
-          onClose={handleCloseNavMenu}
-          sx={{
-            display: { xs: 'block', md: 'none' },
-          }}
-        >
-          {blackThambaSections.map((section) => (
-            <MenuItem key={section.key} onClick={handleCloseNavMenu}>
-              <Button
-                key={section.key}
-                style={{
-                  textTransform: "none",
-                  color: '#EDE0C0',
-                  background: 'transparent'
-                }}
-                onClick={() => {
-                  const element = document.getElementById(section.key);
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    window.location.hash = `#${section.key}`;
-                  }
-                }}
-              >
-                {section.name}
-              </Button>
-            </MenuItem>
-          ))}
-        </Menu>
-      </Box>
-      <Typography
-        variant="h6"
-        noWrap
-        component="div"
-        sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-      >
-        <Tooltip title="Logo">
-          <img src={'/blackthamba.png'} alt="Logo" width="45" style={{ borderRadius: 10 }} />
-        </Tooltip>
-      </Typography>
-      <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-        {blackThambaSections.map((section) => (
-          <Button
-            key={section.key}
-            style={{
-              textTransform: "none",
-              color: '#EDE0C0',
-            }}
-            type='button'
-            onClick={() => {
-              const element = document.getElementById(section.key);
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              } else {
-                window.location.hash = `#${section.key}`;
-              }
-            }}
-          >
-            {section.name}
-          </Button>
-        ))}
-      </Box>
-      <Box sx={{ flexGrow: 0 }}>
-        <Tooltip title="Abrir configurações">
-          <IconButton
-            onClick={toggleDrawer}
-            aria-label="settings"
-            style={{
-              borderStyle: "solid",
-              borderColor: "rgb(231, 235, 240)",
-              borderWidth: "thin",
-              height: 38,
-              width: 38,
-              borderRadius: 10
-            }}
-          >
-            <SettingsIcon />
-          </IconButton>
-        </Tooltip>
-      </Box>
-    </Toolbar>
-  </Container>
-};
-
-// const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-//   display: 'flex',
-//   alignItems: 'center',
-//   justifyContent: 'space-between',
-//   flexShrink: 0,
-//   borderRadius: `calc(${theme.shape.borderRadius}px + 8px)`,
-//   backdropFilter: 'blur(24px)',
-//   border: '1px solid',
-//   borderColor: theme.palette.divider,
-//   backgroundColor: alpha(theme.palette.background.default, 0.4),
-//   boxShadow: theme.shadows[1],
-//   padding: '8px 12px',
-// }));
-// TODO: Review it in a next time
-// const BlackThambaAppBarV2 = () => {
-//   const [open, setOpen] = React.useState(false);
-//   const toggleDrawer = (newOpen: boolean) => () => {
-//     setOpen(newOpen);
-//   };
-
-//   return <AppBar
-//     position="fixed"
-//     enableColorOnDark
-//     sx={{
-//       boxShadow: 0,
-//       bgcolor: 'transparent',
-//       backgroundImage: 'none',
-//       mt: 'calc(var(--template-frame-height, 0px) + 28px)',
-//     }}
-//   >
-//     <Container maxWidth="lg">
-//       <StyledToolbar variant="dense" disableGutters>
-//         <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
-//           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-//             {blackThambaSections.map((section) => (
-//               <Button
-//                 key={section.key}
-//                 style={{
-//                   textTransform: "none",
-//                   color: '#EDE0C0',
-//                 }}
-//                 type='button'
-//                 onClick={() => {
-//                   const element = document.getElementById(section.key);
-//                   if (element) {
-//                     element.scrollIntoView({ behavior: 'smooth' });
-//                   } else {
-//                     window.location.hash = `#${section.key}`;
-//                   }
-//                 }}
-//               >
-//                 {section.name}
-//               </Button>
-//             ))}
-//           </Box>
-//         </Box>
-//         <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 1 }}>
-//           <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
-//             <MenuIcon />
-//           </IconButton>
-//           <Drawer
-//             anchor="top"
-//             open={open}
-//             onClose={toggleDrawer(false)}
-//             PaperProps={{
-//               sx: {
-//                 top: 'var(--template-frame-height, 0px)',
-//               },
-//             }}
-//           >
-//             <Box sx={{ p: 2, backgroundColor: 'background.default' }}>
-//               <Box
-//                 sx={{
-//                   display: 'flex',
-//                   justifyContent: 'flex-end',
-//                 }}
-//               >
-//                 <IconButton onClick={toggleDrawer(false)}>
-//                   <CloseRoundedIcon />
-//                 </IconButton>
-//               </Box>
-
-//               {blackThambaSections.map((section) => (
-//                 <MenuItem key={section.key} onClick={toggleDrawer(false)}>
-//                   <Button
-//                     key={section.key}
-//                     style={{
-//                       textTransform: "none",
-//                       color: '#EDE0C0',
-//                       background: 'transparent'
-//                     }}
-//                     onClick={() => {
-//                       const element = document.getElementById(section.key);
-//                       if (element) {
-//                         element.scrollIntoView({ behavior: 'smooth' });
-//                       } else {
-//                         window.location.hash = `#${section.key}`;
-//                       }
-//                     }}
-//                   >
-//                     {section.name}
-//                   </Button>
-//                 </MenuItem>
-//               ))}
-//             </Box>
-//           </Drawer>
-//         </Box>
-//       </StyledToolbar>
-//     </Container>
-//   </AppBar>
-// }
-
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
@@ -405,8 +164,6 @@ const ResponsiveAppBar = () => {
   const page = query.get('page');
 
   const { changeTheme, mode } = useTheme();
-
-  const isBlackThamba = page === 'blackthamba'
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -426,8 +183,6 @@ const ResponsiveAppBar = () => {
     setDrawerVisible(it => !it);
   };
 
-  const ContainerContent = isBlackThamba ? BlackThambaAppBar : ProfileAppBar;
-
   return <AppBar
       position="sticky"
       color='inherit'
@@ -436,7 +191,7 @@ const ResponsiveAppBar = () => {
         opacity: 0.9
       }}
     >
-      <ContainerContent
+      <ProfileAppBar
         handleOpenNavMenu={handleOpenNavMenu}
         handleCloseNavMenu={handleCloseNavMenu}
         anchorElNav={anchorElNav}
@@ -464,8 +219,7 @@ const ResponsiveAppBar = () => {
           </IconButton>
         </Box>
         <Divider />
-        {isBlackThamba ? null :
-          <Box
+        <Box
             width={360}
             style={{
               paddingRight: 16,
@@ -488,7 +242,7 @@ const ResponsiveAppBar = () => {
                 <Brightness7Icon />
               </ToggleButton>
             </ToggleButtonGroup>
-          </Box>}
+          </Box>
       </Drawer>
       <Divider />
     </AppBar>

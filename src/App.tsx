@@ -6,7 +6,6 @@ import AppBar from 'components/appbar';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import { SnackbarProvider } from 'notistack';
-import BlackThambaLandingPage from 'pages/blackthamba';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -18,8 +17,7 @@ function PageSelector() {
 
   const pages = {
     'perfil': <Perfil />,
-    'projetos': <Projects />,
-    'blackthamba': <BlackThambaLandingPage />,
+    'projetos': <Projects />
   }
   return pages[page as keyof typeof pages] ?? <Projects />
 }
