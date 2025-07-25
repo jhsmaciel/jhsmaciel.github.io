@@ -96,7 +96,7 @@ const ProfileAppBar = ({ anchorElNav, handleCloseNavMenu, handleOpenNavMenu, tog
                   return style;
                 }}
                 className="arco-iris"
-                to={page.key}
+                to={`?page=${page.key}`}
                 key={page.key}
               >
                 {page.name}
@@ -134,7 +134,7 @@ const ProfileAppBar = ({ anchorElNav, handleCloseNavMenu, handleOpenNavMenu, tog
                 return style;
               }}
               className="arco-iris"
-              to={page.key}
+              to={`?page=${page.key}`}
               key={page.key}
             >
               {page.name}
@@ -394,15 +394,19 @@ const BlackThambaAppBar = ({ anchorElNav, handleCloseNavMenu, handleOpenNavMenu,
 //   </AppBar>
 // }
 
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
+
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [drawerVisible, setDrawerVisible] = React.useState<boolean>(false);
+  const query = useQuery();
+  const page = query.get('page');
 
   const { changeTheme, mode } = useTheme();
 
-  const location = useLocation();
-  const currentRoute = location.pathname;
-  const isBlackThamba = "/blackthamba" === currentRoute
+  const isBlackThamba = page === 'blackthamba'
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);

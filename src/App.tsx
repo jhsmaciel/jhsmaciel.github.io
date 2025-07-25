@@ -1,17 +1,35 @@
-import React  from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, useLocation } from 'react-router-dom';
 import Perfil from 'pages/perfil';
 import Projects from 'pages/projetos';
 import AppBar from 'components/appbar';
+import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import { SnackbarProvider } from 'notistack';
 import BlackThambaLandingPage from 'pages/blackthamba';
+
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
+
+function PageSelector() {
+  const query = useQuery();
+  const page = query.get('page');
+
+  const pages = {
+    'perfil': <Perfil />,
+    'projetos': <Projects />,
+    'blackthamba': <BlackThambaLandingPage />,
+  }
+  return pages[page as keyof typeof pages] ?? <Projects />
+}
 
 function App() {
   return (
     <BrowserRouter>
       <AppBar />
       <Box
+        className='wrapper'
         sx={{
           bgcolor: 'background.default',
           color: 'text.primary',
@@ -19,13 +37,18 @@ function App() {
           minHeight: '100vh'
         }}
       >
-        <SnackbarProvider maxSnack={3}>
-          <Routes>
-            <Route path="/perfil" element={<Perfil />} />
-            <Route path="/projetos" element={<Projects />} />
-            <Route path="/blackthamba" element={<BlackThambaLandingPage />} />
-          </Routes>
-        </SnackbarProvider>
+        <Container
+          maxWidth="xl"
+          className='wrapper'
+          sx={{
+            bgcolor: 'background.default',
+            color: 'text.primary',
+          }}
+        >
+          <SnackbarProvider maxSnack={3}>
+            <PageSelector />
+          </SnackbarProvider>
+        </Container>
       </Box>
     </BrowserRouter>
   );

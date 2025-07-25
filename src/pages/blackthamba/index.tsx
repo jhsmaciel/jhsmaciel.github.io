@@ -17,8 +17,8 @@ function BlackThambaLandingPage() {
   const changeFavicon = (image: string) => {
     const favicon = document.querySelector("link[rel~='icon']") as HTMLLinkElement
     if (favicon) {
-      let path = process.env.PUBLIC_URL;
-      console.log(process.env.PUBLIC_URL)
+      let path = process.env.PUBLIC_URL;  
+      console.log(path);
       favicon.href = path + "/" + image;
     }
   }
